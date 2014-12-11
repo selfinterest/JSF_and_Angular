@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="TestApp">
+<head>
+   <title>JSF Tutorial!</title>
+</head>
+<body ng-controller="TestController">
+	<div>Name: {{json.name}}</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular.min.js"></script>
+	<script>
+	 angular.module("TestApp", [])
+	 	.value("json", #{helloWorld.json})
+	 	.controller("TestController", ["$scope", "json", function($scope, json){
+	 		$scope.json = json;
+	 	}])
+	  ;
+	  
+	</script>
+</body>
+</html>
